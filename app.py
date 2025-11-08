@@ -7,6 +7,9 @@ file_content = ""
 if my_file:
     file_content = my_file.read().decode("utf-8")
 
+file_content = file_content.replace(",", "").replace(".", "").replace("!", "").replace("?", "")
+file_content = file_content.replace(":", "").replace(";", "").replace("'", "").replace("-", "")
+
 with st.expander("File content"):
     st.write(file_content)
 
